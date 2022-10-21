@@ -1,0 +1,25 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^1.5.2",
+    "micromodal": "^0.4.10",
+    "preact": "^10.11.2"
+  },
+  "devDependencies": {
+    "@astrojs/preact": "^1.2.0",
+    "@astrojs/tailwind": "^2.1.1",
+    "astro-eleventy-img": "^0.5.0",
+    "astro-icon": "^0.7.3",
+    "tailwindcss-fluid-type": "^2.0.3"
+  }
+}
