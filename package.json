@@ -11,7 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.5.2",
+    "astro": "^1.6.1",
     "micromodal": "^0.4.10",
     "preact": "^10.11.2"
   },
@@ -21,5 +21,18 @@
     "astro-eleventy-img": "^0.5.0",
     "astro-icon": "^0.7.3",
     "tailwindcss-fluid-type": "^2.0.3"
-  }
+  },
+  "description": "[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anish-sanju/website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anish-sanju/website/issues"
+  },
+  "homepage": "https://github.com/anish-sanju/website#readme"
 }
