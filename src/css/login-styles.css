@@ -39,6 +39,10 @@ body{
             animation: fadein 1s;
 
 }
+.to_center{
+    display: flex;
+    align-items: center;
+}
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -87,6 +91,7 @@ body{
     font-family: 'Poppins', sans-serif;
    
 }
+
 .logincard >h3{
     margin: 0 0 30px;
     font-size: 18px;
@@ -118,12 +123,4 @@ body{
     color: #f9f9f9;
     font-weight: 600;
 }
-/*h2::before{              adding logo yet to be resolved
-    content:'';
-    display: block;
-    background-image:url("logo.svg");
-    
-    background-size: 100%;
-    width: 35px;
-    height: 35px;
-}*/
+

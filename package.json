@@ -11,9 +11,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "accessible-astro-components": "^1.6.1",
     "astro": "^1.6.1",
+    "astro-imagetools": "^0.6.16",
     "micromodal": "^0.4.10",
-    "preact": "^10.11.2"
+    "preact": "^10.11.2",
+    "sass": "^1.56.2"
   },
   "devDependencies": {
     "@astrojs/preact": "^1.2.0",
