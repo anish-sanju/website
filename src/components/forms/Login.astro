@@ -1,10 +1,41 @@
 ---
+import { generateImage } from 'astro-eleventy-img';
 const items = [
-    { name: 'Email', placeholder: 'Enter email', type: '' },
+    { name: 'Email', placeholder: 'Enter email', type: 'text' },
     { name: 'Password', placeholder: 'Enter password', type: 'password' }
 ]
+
+const widths = [450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
+
+const options = [
+  'Burger_Final.png',
+  'Donut.png',
+  'Drumstick.png',
+  'Fries.png',
+  'Hot Dog.png',
+  'Glass_Drink.png',
+  'Sandwich.png',
+  'Soda_Can.png',
+  'Soda_Cup.png'
+];
+
+const random = options[~~(Math.random() * options.length)];
+const food = `assets/render/foods/${random}`;
+
+const { webp, avif, png } = generateImage(food, {
+  widths,
+  formats: ["webp", "avif", "png"],
+  outputDir: "public/assets/images/food",
+  urlPath: "/assets/images/food",
+});
+const avifSrcset = avif.map(({ srcset }) => srcset).join(",");
+const webpSrcset = webp.map(({ srcset }) => srcset).join(",");
+const pngSrcset = png.map(({ srcset }) => srcset).join(",");
+
 const { title, desc } = Astro.props;
 ---
+<section class="bg-zinc-900 text-white">
 <section class="relative flex flex-wrap lg:h-screen lg:items-center">
     <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
       <div class="mx-auto max-w-lg text-center">
@@ -20,16 +51,16 @@ const { title, desc } = Astro.props;
                     <div class="relative">
                         <input
                         type={item.type as astroHTML.JSX.HTMLInputTypeAttribute}
-                        class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                        class="text-black w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                         placeholder={item.name}/>
                     </div>
                 </div>
                 ))
             }
         <div class="flex items-center justify-between">
-          <p class="text-sm text-gray-500">
+          <p class="text-sm">
             No account?
-            <a href="#" class="underline">Sign up</a>
+            <a href="/signup" class="underline">Sign up</a>
           </p>
   
           <button
@@ -43,11 +74,51 @@ const { title, desc } = Astro.props;
     </div>
   
     <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
-      <img
-        alt="Welcome"
-        src="https://img.freepik.com/free-photo/paneer-butter-masala-cheese-cottage-curry-served-with-rice-laccha-paratha_466689-73715.jpg?w=1380&t=st=1670775744~exp=1670776344~hmac=c11f975d816747c037770d05b33428a78791ec1b90db81135947915455f0c0d6&auto=format&fit=crop&w=774&q=80"
-        class="absolute inset-0 h-full w-full object-cover"
-      />
+      <picture class="absolute inset-0 h-full w-full object-cover">
+        <source type="image/avif" srcset={avifSrcset} sizes={sizes} />
+        <source type="image/webp" srcset={webpSrcset} sizes={sizes} />
+        <source type="image/png" srcset={pngSrcset} sizes={sizes} />
+        <img
+          class="object-cover w-full h-full"
+          src={webp[0].url}
+          width={webp[0].width}
+          height={webp[0].height}
+          alt="Login page food"
+        />
+      </picture>
     </div>
   </section>
+</section>
+<noscript>
+  <style>
+    #splash-bg-fallback {
+      display: block;
+    }
+  </style>
+</noscript>
+
+<style>
+  @keyframes float {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, 30px, 0);
+    }
+  }
+  picture {
+    animation: float linear 2.5s infinite alternate;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    picture {
+      @apply animate-none;
+    }
+    :global(#starfield) {
+      @apply hidden;
+    }
+    #splash-bg-fallback {
+      @apply block;
+    }
+  }
+</style>
   

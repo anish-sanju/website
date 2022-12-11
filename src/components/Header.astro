@@ -7,10 +7,11 @@ const navItems = [
   { title: "Signup", url: "signup" },
 ];
 
-const desktopIcons = "dark:text-zinc-300 text-black hover:text-zinc-500 dark:hover:text-zinc-400 hidden sm:block";
-const mobileIcons = "dark:text-zinc-300 text-black hover:text-zinc-500 dark:hover:text-zinc-400 sm:hidden";
+const desktopIcons = "hidden sm:block";
+const mobileIcons = "sm:hidden";
 ---
-<header class="text-lg dark:text-zinc-300 mx-auto max-w-6xl flex flex-row !bg-opacity-90 justify-between top-0">
+<section class="bg-zinc-900 text-white backdrop-blur">
+<header class="text-lg mx-auto max-w-6xl flex flex-row !bg-opacity-90 justify-between top-0">
   <a href="/" class="mx-2 my-5 flex items-center" aria-label="Website Logo">
     <Logo />
   </a>
@@ -38,3 +39,4 @@ const mobileIcons = "dark:text-zinc-300 text-black hover:text-zinc-500 dark:hove
     }
   </nav>
 </div>
+</section>

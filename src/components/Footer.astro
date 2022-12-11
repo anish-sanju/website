@@ -1,19 +1,16 @@
 ---
-import BackToTop from "./BackToTop";
+import Logo from "./Logo.astro";
 const thisYear = new Date().getFullYear();
 ---
-
-<footer>
-  <div
-    class="flex flex-col md:flex-row justify-between items-center gap-x-8 gap-y-2 max-w-6xl px-8 py-2 mx-auto"
-  >
-    <div
-      class="order-3 md:order-2 py-1 space-y-1 text-xs text-slate-600 dark:text-slate-400"
-    >
-      ©{thisYear} Meals On Wheels. All Rights Reserved.
-    </div>
-    <div class="flex items-center gap-2 order-1 md:order-3">
-      <BackToTop client:visible />
-    </div>
+<section class="bg-zinc-900 text-white">
+<footer class="text-gray-600 body-font">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+      <Logo />
+    </a>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© {thisYear} Meals On Wheels —
+      <a href="https://twitter.com/" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@mealsonwheels</a>
+    </p>
   </div>
 </footer>
+</section>

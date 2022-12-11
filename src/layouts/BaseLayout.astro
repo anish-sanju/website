@@ -1,10 +1,10 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import '../css/index.css';
+import '../css/index.css'
 const { description, page } = Astro.props;
 ---
-<html lang="en" class="h-full motion-safe:scroll-smooth">
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -12,7 +12,7 @@ const { description, page } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>Meals On Wheels - {page}</title>
-    <link rel="icon" type="image/svg+xml" href="/src/icons/logo.svg" />
+    <link rel="icon" href="/logo.svg" />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,7 +40,7 @@ const { description, page } = Astro.props;
     <meta property="og:description" content={description} />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
-  <body class="h-full overflow-x-hidden text-base bg-default text-default">
+  <body class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white">
     <Header />
     <main>
         <slot />
