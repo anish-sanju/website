@@ -2,7 +2,6 @@
 import { generateImage } from 'astro-eleventy-img';
 import { Icon } from 'astro-icon';
 import Starfield from './starfield.astro';
-import HeroImage from './HeroImage.astro';
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
@@ -35,9 +34,6 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
 
 <section class="relative h-full bg-black">
   <Starfield />
-  <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
-    <HeroImage />
-  </div>
   <div class="relative grid h-full sm:grid-cols-2 place-items-center">
     <h2
       class="flex flex-col self-end gap-2 sm:gap-4 sm:self-auto sm:justify-self-end"
@@ -62,7 +58,7 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
         src={png[0].url}
         width={png[0].width}
         height={png[0].height}
-        alt="A floating astronaut in a space suit"
+        alt="A floating food"
       />
     </picture>
   </div>

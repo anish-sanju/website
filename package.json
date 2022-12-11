@@ -11,11 +11,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.8",
     "accessible-astro-components": "^1.6.1",
     "astro": "^1.6.1",
     "astro-imagetools": "^0.6.16",
     "micromodal": "^0.4.10",
     "preact": "^10.11.2",
+    "preact-feather": "^4.2.1",
     "sass": "^1.56.2"
   },
   "devDependencies": {
