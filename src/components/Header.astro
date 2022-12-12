@@ -1,42 +1,61 @@
 ---
 import Icon from "astro-icon";
 import Logo from "./Logo.astro";
-
-const navItems = [
-  { title: "Login", url: "login" },
-  { title: "Signup", url: "signup" },
-];
-
-const desktopIcons = "hidden sm:block";
-const mobileIcons = "sm:hidden";
 ---
-<section class="bg-zinc-900 text-white backdrop-blur">
-<header class="text-lg mx-auto max-w-6xl flex flex-row !bg-opacity-90 justify-between top-0">
+<div class="navbar">
   <a href="/" class="mx-2 my-5 flex items-center" aria-label="Website Logo">
-    <Logo />
+    <Logo /><p> &nbsp;&nbsp;&nbsp;&nbsp;Meals On Wheels</p>
   </a>
-  <nav class="pt-6 flex flex-row space-x-8">
-    {
-        navItems.map(({ title, url }) => (
-            <a class={desktopIcons} href={url}>
-                {title}
-            </a>
-        ))
-    }
-  </nav>
-  <button class="nav-toggle mx-8 my-5 sm:hidden" aria-label="menu button">
-    <Icon name="lucide:menu" class="w-8 h-8" />
-  </button>
-</header>
-<div class="nav-menu hidden top-[76px]">
-  <nav class="m-6 flex flex-col inline-flex space-y-3">
-    {
-        navItems.map(({ title, url }) => (
-            <a class={mobileIcons} href={url}>
-                {title}
-            </a>
-        ))
-    }
-  </nav>
+  <ul>
+    <li><a href="menu">Browse the Menu</a></li>
+    <li><a href="login">Login</a></li>
+    <li><a href="signup">Sign Up</a></li>
+</ul>
 </div>
-</section>
+                
+<style>
+  @import "https://fonts.googleapis.com/css?family=Poppins";
+  .navbar{
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #18181b;
+    font-family: 'Poppins';
+}
+p{
+  color:white;
+}
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color:white;
+    /*text-transform: uppercase;*/
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #f26c9a;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+
+}
+</style>

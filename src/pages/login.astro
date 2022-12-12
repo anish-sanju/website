@@ -1,13 +1,22 @@
 ---
 import LoginForm from "../components/forms/Login.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
 ---
+
 <BaseLayout
- page='Login'
- description='Login page for meals on wheels'
+ page='Sign Up'
+ description='Sign Up page for meals on wheels'
 >
-  <LoginForm
+<LoginForm 
     title='Welcome Back!'
-    desc='Enter your details to login to the dashboard.'
-  />
+    desc='Enter your details to login.'
+    placeholder="Don't have an account?"
+    button_placeholder="Login"
+    link="Sign up"
+    link_to_page="/signup">
+       
+</LoginForm>
+
 </BaseLayout>
+

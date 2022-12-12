@@ -41,11 +41,20 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
       <div
         class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
       >
-        Order food
-        <br /> from the,
-        <br /> best resturant.
+        You crave it, 
+        <br /> we deliver it.
+        
       </div>
     </h2>
+    <style>
+      .gradient-text{
+        text-align:left;
+        background: rgb(2,0,36);
+        background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(102,102,218,1) 30%, rgba(255,0,117,1) 100%);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+    </style>
     <picture
       class="self-start w-2/3 max-w-3xl sm:w-10/12 sm:self-auto sm:justify-self-start">
       <source type="image/avif" srcset={avifSrcset} sizes={sizes} />

@@ -12,15 +12,18 @@
   },
   "dependencies": {
     "@astrojs/image": "^0.12.1",
+    "@lloydjatkinson/astro-snipcart": "^0.2.0",
+    "@lloydjatkinson/astro-snipcart-design-system": "^0.2.0",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.8",
     "accessible-astro-components": "^1.6.1",
-    "astro": "^1.6.1",
+    "astro": "^1.6.14",
     "astro-imagetools": "^0.6.16",
     "micromodal": "^0.4.10",
     "preact": "^10.11.2",
     "preact-feather": "^4.2.1",
-    "sass": "^1.56.2"
+    "sass": "^1.56.2",
+    "tailwind": "^4.0.0"
   },
   "devDependencies": {
     "@astrojs/preact": "^1.2.0",
