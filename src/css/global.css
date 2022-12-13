@@ -7,3 +7,7 @@ body {
 body::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
+
+html, body {
+  background-color: rgba(0, 0, 0);
+}

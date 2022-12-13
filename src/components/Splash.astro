@@ -3,7 +3,7 @@ import { generateImage } from 'astro-eleventy-img';
 import { Icon } from 'astro-icon';
 import Starfield from './starfield.astro'
 
-const widths = [450, 800];
+const widths = [150, 450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
 
 const options = [
@@ -27,23 +27,21 @@ const { webp, avif, png } = generateImage(food, {
   outputDir: "public/assets/images/food",
   urlPath: "/assets/images/food",
 });
+
 const avifSrcset = avif.map(({ srcset }) => srcset).join(",");
 const webpSrcset = webp.map(({ srcset }) => srcset).join(",");
 const pngSrcset = png.map(({ srcset }) => srcset).join(",");
 ---
-<section class= "relative h-full bg-black">
+<section class= "relative h-full">
   <Starfield />
   <div class="relative grid h-full sm:grid-cols-2 place-items-center">
     <h2
       class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
       <Icon name="logo" class="h-24 text-white md:h-32" />
-      <div
-        class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
-      >
+      <div class="gradient-text text-center font-extrabold tracking-tighter text-8xl">
         You crave it, 
         <br /> we deliver it.
-        
       </div>
     </h2>
     <style>

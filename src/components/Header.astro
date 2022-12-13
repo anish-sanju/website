@@ -1,61 +1,45 @@
 ---
 import Icon from "astro-icon";
 import Logo from "./Logo.astro";
----
-<div class="navbar">
-  <a href="/" class="mx-2 my-5 flex items-center" aria-label="Website Logo">
-    <Logo /><p> &nbsp;&nbsp;&nbsp;&nbsp;Meals On Wheels</p>
-  </a>
-  <ul>
-    <li><a href="menu">Browse the Menu</a></li>
-    <li><a href="login">Login</a></li>
-    <li><a href="signup">Sign Up</a></li>
-</ul>
-</div>
-                
-<style>
-  @import "https://fonts.googleapis.com/css?family=Poppins";
-  .navbar{
-    width: 100%;
-    height: 50px;
-    margin: auto;
-    padding: 35px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #18181b;
-    font-family: 'Poppins';
-}
-p{
-  color:white;
-}
-.logo{
-    width: 120px;
-    cursor: pointer;
-}
-.navbar ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-    position: relative;
-}
-.navbar ul li a{
-    text-decoration: none;
-    color:white;
-    /*text-transform: uppercase;*/
-}
-.navbar ul li::after{
-    content: '';
-    height: 3px;
-    width: 0;
-    background: #f26c9a;
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    transition: 0.5s;;
-}
-.navbar ul li:hover::after{
-    width: 100%;
 
-}
-</style>
+const navItems = [
+  { title: "Browse the Menu", url: "menu" },
+  { title: "Login", url: "login" },
+  { title: "Signup", url: "signup" },
+];
+
+const desktopIcons = "group text-white transition-all duration-300 ease-in-out hidden sm:block";
+const mobileIcons = "group text-white transition-all duration-300 ease-in-out sm:hidden";
+---
+<header class="text-lg mx-auto max-w-6xl flex flex-row !bg-opacity-90 justify-between top-0">
+  <a href="/" class="mx-2 my-5 flex items-center" aria-label="Website Logo">
+    <Logo />
+  </a>
+  <nav class="pt-6 flex flex-row space-x-8">
+    {
+        navItems.map(({ title, url }) => (
+            <a class={desktopIcons} href={url}>
+              <span class='bg-left-bottom bg-gradient-to-r from-pink-500 to-pink-500 bg-[length:0%_4px] bg-no-repeat group-hover:bg-[length:100%_4px] transition-all duration-500 ease-out'>
+                {title}
+              </span>
+            </a>
+        ))
+    }
+  </nav>
+  <button class="nav-toggle mx-8 my-5 sm:hidden" aria-label="menu button">
+    <Icon name="menu" class="w-8 h-8" />
+  </button>
+</header>
+<div class="nav-menu hidden top-[76px]">
+  <nav class="m-6 flex flex-col inline-flex space-y-3">
+    {
+        navItems.map(({ title, url }) => (
+            <a class={mobileIcons} href={url}>
+              <span class='bg-left-bottom bg-gradient-to-r from-pink-500 to-pink-500 bg-[length:0%_4px] bg-no-repeat group-hover:bg-[length:100%_4px] transition-all duration-500 ease-out'>
+                {title}
+              </span>
+            </a>
+        ))
+    }
+  </nav>
+</div>
