@@ -3,8 +3,8 @@
 import { generateImage } from 'astro-eleventy-img';
 
 const items = [
-    { name: 'Enter Username or email', placeholder: 'Enter username or email', type: 'text' },
-    
+    { name: 'Username', placeholder: 'Enter a username', type: 'text' },
+    { name: 'Email', placeholder: 'Enter email', type: 'text' },
     { name: 'Password', placeholder: 'Enter password', type: 'password' }
     
 ]
@@ -64,15 +64,15 @@ const { title, desc } = Astro.props;
             }
         <div class="flex items-center justify-between">
           <p class="text-sm">
-            No Account?
-            <a href="\signup" class="underline">Sign up</a>
+            Already have an account?
+            <a href="login" class="underline">Login</a>
           </p>
       
           <button
             type="submit"
             class="ml-3 inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
           >
-            Log in
+            Sign Up
           </button>
         
         </div>

@@ -3,9 +3,8 @@
 import { generateImage } from 'astro-eleventy-img';
 
 const items = [
-    { name: 'Enter Username or email', placeholder: 'Enter username or email', type: 'text' },
-    
-    { name: 'Password', placeholder: 'Enter password', type: 'password' }
+    { name: "", placeholder: 'Enter a review', type: 'textarea' },
+   
     
 ]
 
@@ -54,25 +53,19 @@ const { title, desc } = Astro.props;
                 <div>
                     <label for={item.name} class="sr-only">{item.name}</label>
                     <div class="relative">
-                        <input
-                        type={item.type as astroHTML.JSX.HTMLInputTypeAttribute}
-                        class="text-black w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                        placeholder={item.name}/>
+                        <textarea class=" scroll text-black w-full rounded-lg border-gray-200 p-1 pr-12 text-sm shadow-sm" name="review" id="" cols="30" rows="10">
+                          </textarea>
                     </div>
                 </div>
                 ))   
             }
         <div class="flex items-center justify-between">
-          <p class="text-sm">
-            No Account?
-            <a href="\signup" class="underline">Sign up</a>
-          </p>
-      
+         
           <button
             type="submit"
-            class="ml-3 inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+            class="ml-3 inline-block rounded-lg bg-blue-500 px-7 py-3 text-sm font-medium text-white"
           >
-            Log in
+            Submit Review
           </button>
         
         </div>
@@ -131,5 +124,8 @@ const { title, desc } = Astro.props;
       @apply block;
     }
   }
+  .scroll::-webkit-scrollbar {
+   display: none;
+ }
 </style>
   
