@@ -12,9 +12,13 @@ const desktopIcons = "group text-white transition-all duration-300 ease-in-out h
 const mobileIcons = "group text-white transition-all duration-300 ease-in-out sm:hidden";
 ---
 <header class="text-lg mx-auto max-w-6xl flex flex-row !bg-opacity-90 justify-between top-0">
-  <a href="/" class="mx-2 my-5 flex items-center" aria-label="Website Logo">
+ 
+  <a href="/" class="mx-2 my-5 flex items-center text-white" aria-label="Website Logo">
     <Logo />
+    &nbsp;&nbsp;
+    Meals on Wheels
   </a>
+  
   <nav class="pt-6 flex flex-row space-x-8">
     {
         navItems.map(({ title, url }) => (

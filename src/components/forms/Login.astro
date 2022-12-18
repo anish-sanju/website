@@ -38,11 +38,12 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
 
 const { title, desc } = Astro.props;
 ---
-<!-- <section class="relative text-white relative flex flex-wrap lg:h-screen lg:items-center">
-  <Starfield />
+
+ <section class="relative text-white flex flex-wrap lg:h-screen lg:items-center">
+ 
     <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
       <div class="mx-auto max-w-lg text-center">
-        <h1 class="gradient-text text-center font-extrabold tracking-tighter text-8xl">{title}</h1>
+        <h1 class="gradient-text text-center font-extrabold tracking-tighter text-4xl">{title}</h1>
         <p class="mt-4">{desc}</p>
       </div>
       <form action="/dashboard" class="mx-auto mt-8 mb-0 max-w-md space-y-4">
@@ -120,21 +121,21 @@ const { title, desc } = Astro.props;
       @apply block;
     }
   }
-</style> -->
+</style> 
 
-<section class= "relative h-full">
+<!--<section class= "relative h-full">
   <Starfield />
   <div class="relative grid h-full sm:grid-cols-2 place-items-center">
-    <h2
+    <h4
       class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end">
-      <div class="gradient-text text-center font-extrabold tracking-tighter text-8xl">
+      <div class="gradient-text text-center font-extrabold tracking-tighter text-6xl">
         {title}
       </div>
-      <div class="gradient-text text-center font-extrabold tracking-tighter text-6xl">
+      <div class="gradient-text text-center font-extrabold tracking-tighter text-4xl">
         {desc}
         <br />
       </div>
-    </h2>
+    </h4>
     <style>
       .gradient-text{
         text-align:left;
@@ -219,5 +220,5 @@ const { title, desc } = Astro.props;
       @apply block;
     }
   }
-</style>
+</style>-->
   

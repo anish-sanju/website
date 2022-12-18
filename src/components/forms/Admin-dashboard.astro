@@ -1,0 +1,114 @@
+---
+import { generateImage } from 'astro-eleventy-img';
+import Starfield from '../starfield.astro';
+
+const items = [
+    { name: 'Enter Username or email', placeholder: 'Enter username or email', type: 'text' },
+    { name: 'Password', placeholder: 'Enter password', type: 'password' } 
+];
+
+const widths = [150, 450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
+
+const options = [
+  'Burger_Final.png',
+  'Donut.png',
+  'Drumstick.png',
+  'Fries.png',
+  'Hot Dog.png',
+  'Glass_Drink.png',
+  'Sandwich.png',
+  'Soda_Can.png',
+  'Soda_Cup.png'
+];
+
+const random = options[~~(Math.random() * options.length)];
+const food = `assets/render/foods/${random}`;
+
+const { webp, avif, png } = generateImage(food, {
+  widths,
+  formats: ["webp", "avif", "png"],
+  outputDir: "public/assets/images/food",
+  urlPath: "/assets/images/food",
+});
+
+const avifSrcset = avif.map(({ srcset }) => srcset).join(",");
+const webpSrcset = webp.map(({ srcset }) => srcset).join(",");
+const pngSrcset = png.map(({ srcset }) => srcset).join(",");
+---
+
+<div class="relative grid h-full sm:grid-cols-2 place-items-center">
+    <!-- <Starfield /> -->
+   
+<div class="mx-auto max-w-lg text-center">
+    <h1 class="text-white gradient-text text-center font-extrabold tracking-tighter text-6xl">Welcome Admin!</h1>
+    <p class="mt-4 text-white">What would you like to do?</p><br>
+ 
+  
+
+  
+    <a class="group text-white transition-all duration-300 ease-in-out" href="admin-enter">
+        <span class="bg-left-bottom bg-gradient-to-r from-pink-500 to-pink-500 bg-[length:0%_4px] bg-no-repeat group-hover:bg-[length:100%_4px] transition-all duration-500 ease-out">
+       Enter a Food Item
+        </span>
+       </a> <br>
+       <a class="group text-white transition-all duration-300 ease-in-out">
+        <span class="bg-left-bottom bg-gradient-to-r from-pink-500 to-pink-500 bg-[length:0%_4px] bg-no-repeat group-hover:bg-[length:100%_4px] transition-all duration-500 ease-out">
+       Delete a Food Item
+        </span>
+       </a>
+    </div>
+    <picture
+      class="self-start w-2/3 max-w-3xl sm:w-10/12 sm:self-auto sm:justify-self-start">
+      <source type="image/avif" srcset={avifSrcset} sizes={sizes} />
+      <source type="image/webp" srcset={webpSrcset} sizes={sizes} />
+      <source type="image/png" srcset={pngSrcset} sizes={sizes} />
+      <img
+        class="object-cover w-full h-full"
+        src={webp[0].url}
+        width={webp[0].width}
+        height={webp[0].height}
+        alt="A floating food"
+      />
+    </picture>
+
+
+
+
+</div>
+<noscript>
+    <style>
+      #splash-bg-fallback {
+        display: block;
+      }
+    </style>
+  </noscript>
+  
+  <style>
+    .mx-auto{
+        position: relative;
+        z-index: 2;
+    }
+    @keyframes float {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(0, 30px, 0);
+      }
+    }
+    picture {
+      animation: float linear 2.5s infinite alternate;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      picture {
+        @apply animate-none;
+      }
+      :global(#starfield) {
+        @apply hidden;
+      }
+      #splash-bg-fallback {
+        @apply block;
+      }
+    }
+  </style>

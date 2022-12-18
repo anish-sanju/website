@@ -9,5 +9,6 @@ body::-webkit-scrollbar {
 }
 
 html, body {
-  background-color: rgba(0, 0, 0);
+  /* background-color: #18181b; */
+  background-color: rgb(0, 0, 0);
 }

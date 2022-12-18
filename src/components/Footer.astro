@@ -2,14 +2,37 @@
 import Logo from "./Logo.astro";
 const thisYear = new Date().getFullYear();
 ---
-<footer class="text-gray-600 body-font">
-  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+<footer class="text-gray-600 body-font ">
+  <div class="container px-5 py-6 mx-auto flex justify-between sm:flex-row flex-col">
+    <div class="flex justify-between">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900" href="/">
       <Logo />
     </a>
-    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© {thisYear} Meals On Wheels —
-      <a href="https://twitter.com/" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@mealsonwheels</a>
-    </p>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© {thisYear} Meals On Wheels </p>
+  
+    </div>
+  <section class="text-gray-200 body-font flex flex-row space-x-8">
+      <div class="container px-5 py-0.1 mx-auto">
+        <div class="flex flex-row justify-between -m-4 text-center">
+          <div class="p-4 sm:w-1/4 w-1/2">
+            <h2 class="title-font font-medium sm:text-1xl text-1xl text-gray-500">2.7K</h2>
+            <p class="leading-relaxed">Users</p>
+          </div>
+          <div class="p-4 sm:w-1/4 w-1/2">
+            <h5 class="title-font font-medium sm:text-1xl text-1xl text-gray-500">1.8K</h5>
+            <p class="leading-relaxed">Reviews</p>
+          </div>
+          <div class="p-4 sm:w-1/4 w-1/2">
+            <h5 class="title-font font-medium sm:text-1xl text-1xl text-gray-500">500+</h5>
+            <p class="leading-relaxed">Foods</p>
+          </div>
+          <div class="p-4 sm:w-1/4 w-1/2">
+            <h5 class="title-font font-medium sm:text-1xl text-1xl text-gray-500">100%</h5>
+            <p class="leading-relaxed">Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
 </footer>
