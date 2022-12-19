@@ -2,18 +2,23 @@
 const { title, desc } = Astro.props;
 const items = [
     { name: 'Enter a food item', placeholder: 'Enter a food item', type: 'text' }
-    //{ name: 'Password', placeholder: 'Enter password', type: 'password' } 
+    //{ name: 'Password'val, placeholder: 'Enter password', type: 'password' } 
 ];
+const categories = [{value: "1", name: "North Indian"}, 
+                    {value: "2", name: "South Indian"}, 
+                    {value: "3", name:"Continental"}, 
+                    {value: "4", name:"Italian"}
+                    ]
 ---
 <div class="w-full h-screen flex justify-center items-center">
-  <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
+  <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24 ">
     <div class="mx-auto max-w-lg text-center">
       <h1 class="text-white gradient-text text-center font-extrabold tracking-tighter text-6xl">{title}</h1>
       <p class="mt-4 text-white text-3xl">{desc}</p>
     </div>
 
 
-    <form action="/dashboard" class="mx-auto mt-8 mb-0 max-w-md space-y-4">
+    <form action="/menu" class="mx-auto mt-8 mb-0 max-w-md space-y-4 ">
             {
                 items.map(item => (
                 <div>
@@ -27,13 +32,34 @@ const items = [
                 </div>
                 ))   
             }
+            
+              <div class="mb-3" >
+                <select class= "text-black w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm" aria-label="Default select example">
+                    <option selected>Pick a Category</option>
+                    {
+                      categories.map(cat => (
+                        <option value={cat.value} class= "text-black w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm">{cat.name}</option>
+                      )
+                      )
+                    }
+                </select>
+              
+            </div>
+            <div class="flex items-center justify-center">
+              <button
+            type="submit"
+            class=" rounded-lg bg-zinc-700 px-10 py-3 text-sm font-medium text-white">
+            Confirm
+          </button>
+        </div>
        
       </form><br>
+      </div>
+    </div>
 
 
 
-
-    <div class=" w-full flex justify-center">
+    <!-- <div class=" w-full flex justify-center">
            <div @click.away="openSort = false" class="relative" x-data="{ openSort: true,sortType:'Pick a Category' }">
                <button @click="openSort = !openSort" class="flex  text-white bg-gray-200 items-center justify-start w-40  py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg ">
                    <span x-text="sortType"></span>
@@ -89,4 +115,4 @@ const items = [
        </div>
        <script src="//unpkg.com/alpinejs" defer></script>
        
-</div>
+</div> -->
