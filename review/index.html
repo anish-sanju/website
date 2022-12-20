@@ -22,9 +22,9 @@
     <meta property="og:type" content="website">
     <meta property="og:description" content="Review page for meals on wheels">
     <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/assets/admin.e997d1aa.css" />
-<link rel="stylesheet" href="/assets/review.84a040f6.css" />
-<link rel="stylesheet" href="/assets/admin.2865cee2.css" /><script type="module" src="/hoisted.b04d9212.js"></script></head>
+  <link rel="stylesheet" href="/assets/admin.c4d504a5.css" />
+<link rel="stylesheet" href="/assets/review.6d35293a.css" />
+<link rel="stylesheet" href="/assets/admin.e6897013.css" /><script type="module" src="/hoisted.7e28721b.js"></script></head>
   <body class="h-full overflow-x-hidden bg-default text-default text-base">
     <header class="text-lg mx-auto max-w-6xl flex flex-row !bg-opacity-90 justify-between top-0">
  
@@ -73,33 +73,26 @@
   </nav>
 </div>
     <main>
-        <!-- 
-<section class="bg-zinc-900 text-white">
-<section class="relative flex flex-wrap lg:h-screen lg:items-center">
-    <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
-      <div class="mx-auto max-w-lg text-center">
-        <h1 class="text-2xl font-bold sm:text-3xl">{title}</h1>
-        <p class="mt-4">{desc}</p>
+        <section class="bg-zinc-900 text-white astro-FYLZHMAN">
+  
+<section class="relative flex flex-wrap lg:h-screen lg:items-center astro-FYLZHMAN">
+  
+    <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24 astro-FYLZHMAN">
+      <div class="mx-auto max-w-lg text-center astro-FYLZHMAN">
+        <h1 class="text-2xl font-bold sm:text-3xl astro-FYLZHMAN">Hey there!</h1>
+        <p class="mt-4 astro-FYLZHMAN">How was your experience?</p>
       </div>
       
-      <form action="/dashboard" class="mx-auto mt-8 mb-0 max-w-md space-y-4">
-            {
-                items.map(item => (
-                <div>
-                    <label for={item.name} class="sr-only">{item.name}</label>
-                    <div class="relative">
-                        <textarea class=" scroll text-black w-full rounded-lg border-gray-200 p-1 pr-12 text-sm shadow-sm" name="review" id="" cols="30" rows="10">
-                          </textarea>
+      <form action="/dashboard" class="mx-auto mt-8 mb-0 max-w-md space-y-4 astro-FYLZHMAN">
+            <div class="astro-FYLZHMAN">
+                    <label for="" class="sr-only astro-FYLZHMAN"></label>
+                    <div class="relative astro-FYLZHMAN">
+                        <textarea class=" scroll text-black w-full rounded-lg border-gray-200 p-1 pr-12 text-sm shadow-sm astro-FYLZHMAN" name="review" id="" cols="30" rows="10">                          </textarea>
                     </div>
                 </div>
-                ))   
-            }
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-center astro-FYLZHMAN">
          
-          <button
-            type="submit"
-            class="ml-3 inline-block rounded-lg bg-blue-500 px-7 py-3 text-sm font-medium text-white"
-          >
+          <button type="submit" class="ml-3 inline-block rounded-lg bg-blue-500 px-7 py-3 text-sm font-medium text-white astro-FYLZHMAN">
             Submit Review
           </button>
         
@@ -110,18 +103,12 @@
     </div>
   
   
-    <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
-      <picture class="absolute inset-0 h-full w-full object-cover">
-        <source type="image/avif" srcset={avifSrcset} sizes={sizes} />
-        <source type="image/webp" srcset={webpSrcset} sizes={sizes} />
-        <source type="image/png" srcset={pngSrcset} sizes={sizes} />
-        <img
-          class="object-cover w-full h-full"
-          src={webp[0].url}
-          width={webp[0].width}
-          height={webp[0].height}
-          alt="Login page food"
-        />
+    <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2 astro-FYLZHMAN">
+      <picture class="absolute inset-0 h-full w-full object-cover astro-FYLZHMAN">
+        <source type="image/avif" srcset="/assets/images/food/UCqEG_PFAB-450.avif 450w,/assets/images/food/UCqEG_PFAB-800.avif 800w" sizes="(min-width: 640px) 42vw, 67vw" class="astro-FYLZHMAN">
+        <source type="image/webp" srcset="/assets/images/food/UCqEG_PFAB-450.webp 450w,/assets/images/food/UCqEG_PFAB-800.webp 800w" sizes="(min-width: 640px) 42vw, 67vw" class="astro-FYLZHMAN">
+        <source type="image/png" srcset="/assets/images/food/UCqEG_PFAB-450.png 450w,/assets/images/food/UCqEG_PFAB-800.png 800w" sizes="(min-width: 640px) 42vw, 67vw" class="astro-FYLZHMAN">
+        <img class="object-cover w-full h-full astro-FYLZHMAN" src="/assets/images/food/UCqEG_PFAB-450.webp" width="450" height="450" alt="Login page food">
       </picture>
     </div>
   </section>
@@ -135,6 +122,78 @@
   </style>
 </noscript>
 
+
+ 
+
+<!-- <section class= "relative h-full">
+  <Starfield />
+  <div class="relative grid h-full sm:grid-cols-2 place-items-center">
+    <h2
+      class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end">
+      <div class="gradient-text text-center font-extrabold tracking-tighter text-8xl">
+        {title}
+      </div>
+      <div class="gradient-text text-center font-extrabold tracking-tighter text-6xl">
+        {desc}
+        <br />
+      </div>
+    </h2>
+    <style>
+      .gradient-text{
+        text-align:left;
+        background: rgb(2,0,36);
+        background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(102,102,218,1) 30%, rgba(255,0,117,1) 100%);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+    </style>
+    <picture
+      class="self-start w-2/3 max-w-3xl sm:w-10/12 sm:self-auto sm:justify-self-start">
+      <source type="image/avif" srcset={avifSrcset} sizes={sizes} />
+      <source type="image/webp" srcset={webpSrcset} sizes={sizes} />
+      <source type="image/png" srcset={pngSrcset} sizes={sizes} />
+      <img
+        class="object-cover w-full h-full"
+        src={webp[0].url}
+        width={webp[0].width}
+        height={webp[0].height}
+        alt="A floating food"
+      />
+    </picture>
+    <form action="/reviewsuccess" class="mx-auto mt-8 mb-0 max-w-md space-y-4">
+            {
+                items.map(item => (
+                <div>
+                    <label for={item.name} class="sr-only">{item.name}</label>
+                    <div class="relative">
+                        <input
+                        type={item.type as astroHTML.JSX.HTMLInputTypeAttribute}
+                        class="text-black w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                        placeholder={item.name}/>
+                    </div>
+                </div>
+                ))   
+            }
+        <div class="text-white flex items-center justify-between">
+          <p class="text-sm"></p>
+          <button
+            type="submit"
+            class="ml-3 inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+            >
+            Submit Review
+          </button>
+        </div>
+      </form>
+  </div>
+</section>
+
+<noscript>
+  <style>
+    #splash-bg-fallback {
+      display: block;
+    }
+  </style>
+</noscript>
 
 <style>
   @keyframes float {
@@ -159,58 +218,7 @@
       @apply block;
     }
   }
-  .scroll::-webkit-scrollbar {
-   display: none;
- }
-</style> --><section class="relative h-full astro-6RMDSCIS">
-  <div id="starfield" class="absolute inset-0">
-  <canvas id="starfield-canvas"></canvas>
-</div>
-
-
-  <div class="relative grid h-full sm:grid-cols-2 place-items-center astro-6RMDSCIS">
-    <h2 class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end astro-6RMDSCIS">
-      <div class="gradient-text text-center font-extrabold tracking-tighter text-8xl astro-6RMDSCIS">
-        Hey there!
-      </div>
-      <div class="gradient-text text-center font-extrabold tracking-tighter text-6xl astro-6RMDSCIS">
-        How was your experience?
-        <br class="astro-6RMDSCIS">
-      </div>
-    </h2>
-    
-    <picture class="self-start w-2/3 max-w-3xl sm:w-10/12 sm:self-auto sm:justify-self-start astro-6RMDSCIS">
-      <source type="image/avif" srcset="/assets/images/food/KcrvG_911L-450.avif 450w,/assets/images/food/KcrvG_911L-800.avif 800w" sizes="(min-width: 640px) 42vw, 67vw" class="astro-6RMDSCIS">
-      <source type="image/webp" srcset="/assets/images/food/KcrvG_911L-450.webp 450w,/assets/images/food/KcrvG_911L-800.webp 800w" sizes="(min-width: 640px) 42vw, 67vw" class="astro-6RMDSCIS">
-      <source type="image/png" srcset="/assets/images/food/KcrvG_911L-450.png 450w,/assets/images/food/KcrvG_911L-800.png 800w" sizes="(min-width: 640px) 42vw, 67vw" class="astro-6RMDSCIS">
-      <img class="object-cover w-full h-full astro-6RMDSCIS" src="/assets/images/food/KcrvG_911L-450.webp" width="450" height="450" alt="A floating food">
-    </picture>
-    <form action="/reviewsuccess" class="mx-auto mt-8 mb-0 max-w-md space-y-4 astro-6RMDSCIS">
-            <div class="astro-6RMDSCIS">
-                    <label for="" class="sr-only astro-6RMDSCIS"></label>
-                    <div class="relative astro-6RMDSCIS">
-                        <input type="textarea" class="text-black w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm astro-6RMDSCIS" placeholder="">
-                    </div>
-                </div>
-        <div class="text-white flex items-center justify-between astro-6RMDSCIS">
-          <p class="text-sm astro-6RMDSCIS"></p>
-          <button type="submit" class="ml-3 inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white astro-6RMDSCIS">
-            Submit Review
-          </button>
-        </div>
-      </form>
-  </div>
-</section>
-
-<noscript>
-  <style>
-    #splash-bg-fallback {
-      display: block;
-    }
-  </style>
-</noscript>
-
-
+</style>-->
     </main>
     <footer class="text-gray-600 body-font ">
   <div class="container px-5 py-6 mx-auto flex justify-between sm:flex-row flex-col">
