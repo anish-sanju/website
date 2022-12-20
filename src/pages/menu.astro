@@ -1,0 +1,50 @@
+---
+import MenuLayout from "../layouts/MenuLayout.astro";
+
+enum Colors {
+    red = 'bg-red-500',
+    green = 'bg-green-500',
+    pink = 'bg-pink-500',
+    purple = 'bg-purple-500'
+}
+
+enum Type {
+    north = 'North Indian',
+    south = 'South Indian',
+    con = 'Continental',
+    Italy = 'Italian'
+}
+
+const menuItems = [
+    { type: Type.north , dish: '', color: Colors.red, description: 'grnjgrtbhjkr;', price: '250', image: 'https://cdn.pixabay.com/photo/2015/10/02/15/59/olive-oil-968657_960_720.jpg' }
+]
+---
+<MenuLayout>
+    <div class="container w-full px-5 py-6 mx-auto">
+        <div class="grid lg:grid-cols-4 gap-y-6">
+            {
+                menuItems.map(item => (
+                    <div class="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
+                        <img class="w-full h-48" src={item.image} alt="Image" />
+                    <div class="px-6 py-4">
+                    <div class="flex mb-2">
+                    <span class={`px-4 py-0.5 text-sm ${item.color} rounded-full text-red-50`}>{item.type}</span>
+                    </div>
+                    <h4 class="mb-3 text-md font-semibold tracking-tight text-green-600 uppercase">{item.dish}</h4>
+                    <p class="leading-normal text-gray-300">{item.description}</p>
+                    </div>
+                    <div class="flex items-center justify-between p-4">
+                    <span class="text-xl text-blue-600">{`₹${item.price}`}</span>
+                    <button class="rounded-lg bg-blue-500 px-10 py-3 text-sm font-medium text-white">Add to Cart</button>
+                    </div>
+                </div>
+                ))
+            }
+        </div>
+      </div>
+</MenuLayout>
+<script>
+const isLoggedIn = localStorage.getItem('isLoggedIn');
+if (isLoggedIn === null)
+    window.location.href = '/login'
+</script>

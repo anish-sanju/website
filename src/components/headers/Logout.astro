@@ -1,0 +1,49 @@
+---
+import Icon from "astro-icon";
+import Logo from "../Logo.astro";
+
+const navItems = [
+  { title: 'Orders', url: 'orders' },
+  { title: 'Logout', url : '/' }
+];
+
+const desktopIcons = "group text-white transition-all duration-300 ease-in-out hidden sm:block";
+const mobileIcons = "group text-white transition-all duration-300 ease-in-out sm:hidden";
+---
+<header class="text-lg mx-auto max-w-6xl flex flex-row !bg-opacity-90 justify-between top-0">
+ 
+  <a href="/" class="mx-2 my-5 flex items-center text-white" aria-label="Website Logo">
+    <Logo />
+    &nbsp;&nbsp;
+    Meals on Wheels
+  </a>
+  
+  <nav class="pt-6 flex flex-row space-x-8">
+    <Icon class="bi:cart-fill" />
+    {
+        navItems.map(({ title, url }) => (
+             <a class={desktopIcons} href={url}>
+              <span class='bg-left-bottom bg-gradient-to-r from-pink-500 to-pink-500 bg-[length:0%_4px] bg-no-repeat group-hover:bg-[length:100%_4px] transition-all duration-500 ease-out'>
+                {title}
+              </span>
+              </a>
+          ))
+      }
+  </nav>
+  <button class="nav-toggle mx-8 my-5 sm:hidden" aria-label="menu button">
+    <Icon name="menu" class="w-8 h-8" />
+  </button>
+</header>
+<div class="nav-menu hidden top-[76px]">
+  <nav class="m-6 flex flex-col inline-flex space-y-3">
+    {
+        navItems.map(({ title, url }) => (
+            <a class={mobileIcons} href={url}>
+              <span class='bg-left-bottom bg-gradient-to-r from-pink-500 to-pink-500 bg-[length:0%_4px] bg-no-repeat group-hover:bg-[length:100%_4px] transition-all duration-500 ease-out'>
+                {title}
+              </span>
+            </a>
+        ))
+    }
+  </nav>
+</div>

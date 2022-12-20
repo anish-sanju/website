@@ -11,3 +11,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     title='Welcome!'
     desc='Enter your details to signup.' />
 </BaseLayout>
+<script>
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  if (isLoggedIn !== null)
+      localStorage.clear()
+</script>

@@ -46,13 +46,14 @@ const { title, desc } = Astro.props;
         <h1 class="gradient-text text-center font-extrabold tracking-tighter text-4xl">{title}</h1>
         <p class="mt-4">{desc}</p>
       </div>
-      <form action="/dashboard" class="mx-auto mt-8 mb-0 max-w-md space-y-4">
+      <form id="login" action="/menu" class="mx-auto mt-8 mb-0 max-w-md space-y-4">
             {
                 items.map(item => (
                 <div>
                     <label for={item.name} class="sr-only">{item.name}</label>
                     <div class="relative">
                         <input
+                        id={item.name}
                         type={item.type as astroHTML.JSX.HTMLInputTypeAttribute}
                         class="text-black w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                         placeholder={item.name}/>
@@ -67,6 +68,7 @@ const { title, desc } = Astro.props;
           </p>
       
           <button
+            id='Login'
             type="submit"
             class="ml-3 inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
           >
