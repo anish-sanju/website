@@ -24,6 +24,7 @@
     "accessible-astro-components": "^1.6.1",
     "astro": "^1.7.1",
     "astro-imagetools": "^0.6.16",
+    "flowbite": "^1.5.5",
     "micromodal": "^0.4.10",
     "preact": "^10.11.2",
     "preact-feather": "^4.2.1",

@@ -37,9 +37,11 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
 
 const { title, desc } = Astro.props;
 ---
-<!-- 
+
 <section class="bg-zinc-900 text-white">
+  
 <section class="relative flex flex-wrap lg:h-screen lg:items-center">
+  
     <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
       <div class="mx-auto max-w-lg text-center">
         <h1 class="text-2xl font-bold sm:text-3xl">{title}</h1>
@@ -58,7 +60,7 @@ const { title, desc } = Astro.props;
                 </div>
                 ))   
             }
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-center">
          
           <button
             type="submit"
@@ -126,9 +128,9 @@ const { title, desc } = Astro.props;
   .scroll::-webkit-scrollbar {
    display: none;
  }
-</style> -->
+</style> 
 
-<section class= "relative h-full">
+<!-- <section class= "relative h-full">
   <Starfield />
   <div class="relative grid h-full sm:grid-cols-2 place-items-center">
     <h2
@@ -221,5 +223,5 @@ const { title, desc } = Astro.props;
       @apply block;
     }
   }
-</style>
+</style>-->
   
