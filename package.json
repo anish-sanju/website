@@ -11,6 +11,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astro-reactive/form": "^0.6.7",
+    "@astro-reactive/validator": "^0.2.7",
     "@astrojs/image": "^0.12.1",
     "@astrojs/react": "^1.2.2",
     "@headlessui/react": "^1.7.7",
@@ -24,8 +26,12 @@
     "accessible-astro-components": "^1.6.1",
     "astro": "^1.7.1",
     "astro-imagetools": "^0.6.16",
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
     "flowbite": "^1.5.5",
     "micromodal": "^0.4.10",
+    "nanostores": "^0.7.1",
+    "pg": "^8.8.0",
     "preact": "^10.11.2",
     "preact-feather": "^4.2.1",
     "react": "^18.2.0",

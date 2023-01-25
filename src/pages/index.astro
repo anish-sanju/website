@@ -8,3 +8,7 @@ import Base from "../layouts/BaseLayout.astro";
  page = "Home">
   <Splash />
 </Base>
+<script>
+  import { getUser } from "../scripts/user";
+  await getUser();
+</script>

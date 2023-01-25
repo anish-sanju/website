@@ -10,26 +10,4 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     title='Welcome Back!'
     desc='Enter your details to login.' />
 </BaseLayout>
-<script>
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-
-    if (isLoggedIn !== null)
-        location.href = '/menu'
-
-    const usernameoremail = document.getElementById('Enter Username or email') as HTMLInputElement;
-    const password = document.getElementById('Password') as HTMLInputElement;
-    const button = document.getElementById('Login');
-
-    button.addEventListener('click', ev => {
-        ev.preventDefault();
-
-        if (usernameoremail.value !== 'admin' && password.value !== 'admin') {
-            location.href = '/menu'
-            localStorage.setItem('isLoggedIn', 'true');
-        } else {
-            location.href = '/admin'
-            localStorage.setItem('isLoggedIn', 'true');
-        }
-    })
-</script>
 

@@ -1,0 +1,35 @@
+---
+import LoginForm from "../components/forms/Login.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+ page='Login'
+ description='Sign Up page for meals on wheels'>
+<LoginForm 
+    title='Welcome Back!'
+    desc='Enter your details to login.' />
+</BaseLayout>
+<script>
+    import { apiClient } from '../scripts/api';
+    const form = document.getElementById('login');
+
+const submit = async (e) => {
+  e.preventDefault();
+  const username = (document.getElementById('email') as HTMLInputElement).value;
+    const admin = await apiClient({
+          method: "GET",
+          url: `/admin/${username}`,
+    });
+    if (admin.status === 404) {
+          alert('Not found')
+          // @ts-ignore
+      } else if (admin.status === 200 && admin.body !== {}) {
+          window.location.href = '/menu'
+      } else {
+              alert("Incorrect password")
+        }
+    }
+  
+  form.addEventListener('submit',submit);
+</script>
